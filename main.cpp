@@ -431,6 +431,8 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
+
+/*
 1) Coffee Shop
     5 properties:
         1) number of coffee machines (int)
@@ -550,6 +552,8 @@ MOVE THEM to the space below this block comment and put them in numerical order
         1) automate routines
         2) monitor home security
         3) adjust home settings remotely
+*/
+
 /*
 =================
 Part 1d - Step 7: Commit
