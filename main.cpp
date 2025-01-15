@@ -615,7 +615,55 @@ struct CarWash  //This is the empty struct, below my plain-English UDT.
 /*
 Notice that the struct name 'CarWash' conforms with the Course Coding Standard, described in the Readme.MD
 */
+struct CoffeeShop
+{
+    
+};
 
+struct GroceryStore
+{
+    
+};
+
+struct ConcertHall
+{
+    
+};
+
+struct FederalGovernment
+{
+
+};
+
+struct LightingSystem
+{
+    
+};
+
+struct SecuritySystem
+{
+    
+};
+
+struct ClimateControl
+{
+    
+};
+
+struct EntertainmentSystem
+{
+    
+};
+
+struct SmartAssistant
+{
+    
+};
+
+struct SmartHome
+{
+    
+};
 /*
 =================
 Part 1e - Step 2: Commit
