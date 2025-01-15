@@ -621,142 +621,221 @@ Notice that the struct name 'CarWash' conforms with the Course Coding Standard, 
 */
 struct CoffeeShop
 {
-    //5 properties:
-    //    1) number of coffee machines (int)
-    //    2) number of employees (int)
-    //    3) amount of milk used per week (ounces) (float)
-    //    4) amount of profit made per week (dollars) (double)
-    //    5) number of cups sold per day (int)
+    //number of coffee machines
+    int numberOfCoffeeMachines = 3;
+    //number of employees
+    int numberOfEmployees = 10;
+    //amount of milk used per week
+    float amountOfMilkUsedPerWeek = 750.0f;    
+    //amount of profit made per week
+    double amountOfProfitMadePerWeek = 10000.00;
+    //number of cups sold per day
+    int numberOfCupsSoldPerDay = 100;
     //3 things it can do:
-    //    1) make coffee
-    //    2) charge customer
-    //    3) make desserts
+    //make coffee
+    void makeCoffee();
+    //charge customer
+    void chargeCustomer();
+    //make desserts\
+    void makeDesserts();
 };
 
 struct GroceryStore
 {
     //5 properties:
-    //    1) number of employees (int)
-    //    2) number of payment stations (int)
-    //    3) amount of fresh food sold per week (pounds) (float)
-    //    4) amount of processed food sold per week (pounds) (float)
-    //    5) number of transactions a day (int)
+    //number of employees
+    int numberOfEmployees = 5;
+    //number of payment stations
+    int numberOfPaymentStations = 3;
+    //amount of fresh food sold per week
+    float amountOfFreshFoodSoldPerWeek = 100.0f;
+    //amount of processed food sold per week
+    float amountOfProcessedFoodSoldPerWeek = 50.0f;
+    //number of transactions a day
+    int numberOfTransactionsADay = 10;
     //3 things it can do:
-    //    1) stock shelves
-    //    2) charge customer
-    //    3) sell food
+    //stock shelves
+    void stockShelves();
+    //charge customer
+    void chargeCustomer();
+    //sell food
+    void sellFood();
 };
 
 struct ConcertHall
 {
     //5 properties:
-    //    1) number of seats (int)
-    //    2) number of bathrooms (int)
-    //    3) amount of rent (dollars) (double)
-    //    4) amount of profit made per week (dollars) (double)
-    //    5) number of concerts a week (int)
+    //number of seats
+    int numberOfSeats = 200;
+    //number of bathrooms
+    int numberOfBathrooms = 5;
+    //amount of rent
+    double amountOfRent = 5000.00;
+    //amount of profit made per week
+    double amountOfProfitMadePerWeek = 10000.00;
+    //number of concerts a week
+    int numberOfConcertsAWeek = 10;
     //3 things it can do:
-    //    1) sell tickets
-    //    2) book artists
-    //    3) sell food
+    //sell tickets
+    void sellTickets();
+    //book artists
+    void bookArtists();
+    //sell food
+    void sellFood();
 };
 
 struct FederalGovernment
 {
     //5 properties:
-    //    1) number of agencies (int)
-    //    2) number of employees (int)
-    //    3) amount of budget (dollars) (double)
-    //    4) number of policies (int)
-    //    5) number of laws passed (int)
+    //number of agencies
+    int numberOfAgencies = 100;
+    //number of employees
+    int numberOfEmployees = 1000;
+    //amount of budget
+    double amountOfBudget = 50000.00;
+    //number of policies
+    int numberOfPolicies = 50;
+    //number of laws passed
+    int numberOfLawsPassed = 200;
     //3 things it can do:
-    //    1) create policies
-    //    2) pass laws
-    //    3) collect taxes
+    //create policies
+    void createPolicies();
+    //pass laws
+    void passLaws();
+    //collect taxes
+    void collectTaxes();
 };
 
 struct LightingSystem
 {
     //5 properties:
-    //    1) Number of lights (int)
-    //    2) Maximum brightness (lumens) (int)
-    //    3) Color temperature (Kelvin) (float)
-    //    4) Power consumption (watts) (float)
-    //    5) Brand name (std::string)
+    //Number of lights
+    int numberOfLights = 100;
+    //Maximum brightnes
+    int maximumBrightness = 1000;
+    //Color temperature
+    float colorTemperature = 5000.0f;
+    //Power consumption
+    float powerConsumption = 500.0f;
+    //Brand name
+    std::string brandName = "Philips";
     //3 things it can do:
-    //    1) Turn lights on/off
-    //    2) Dim lights
-    //    3) Change light color
+    //Turn lights on/off
+    void turnLightsOn();
+    //Dim lights
+    void dimLights();
+    //Change light color
+    void changeLightColor();
 };
 
 struct SecuritySystem
 {
     //5 properties:
-    //    1) Number of cameras (int)
-    //    2) Numer of motion sensors (int)
-    //    3) Alarm volume (dB) (int)
-    //    4) Battery backup duration (hours) (int)
-    //    5) Monitoring service name (std::string)
+    //Number of cameras
+    int numberOfCameras = 10;
+    //Numer of motion sensors
+    int numberOfMotionSensors = 5;
+    //Alarm volume (dB)
+    int alarmVolume = 100;
+    //Battery backup duration
+    int batteryBackupDuration = 24;
+    //Monitoring service name
+    std::string monitoringServiceName = "Security Monitoring System";
     //3 things it can do:
-    //    1) Detect motion
-    //    2) Trigger alarm
-    //    3) Record video
+    //Detect motion
+    void detectMotion();
+    //Trigger alarm
+    void triggerAlarm();
+    //Record video
+    void recordVideo();
 };
 
 struct ClimateControl
 {
     //5 properties:
-    //    1) Current temperature (Celsius) (float)
-    //    2) Target temperature (Celsius) (float)
-    //    3) Humidity level (%) (float)
-    //    4) Fan speed levels (int)
-    //    5) Manufacturer (std::string)
+    //Current temperature
+    float currentTemperature = 25.0f;
+    //Target temperature
+    float targetTemperature = 30.0f;
+    //Humidity level
+    float humidityLevel = 50.0f;
+    //Fan speed levels
+    int fanSpeedLevels = 3;
+    //Manufacturer
+    std::string manufacturer = "Philips";
     //3 things it can do:
-    //    1) Adjust temperature
-    //    2) Control fan speed
-    //    3) Monitor air quality
+    //Adjust temperature
+    void adjustTemperature();
+    //Control fan speed
+    void controlFanSpeed();
+    //Monitor air quality
+    void monitorAirQuality();
 };
 
 struct EntertainmentSystem
 {
     //5 properties:
-    //    1) Number of speakers (int)
-    //    2) Display resolution (pixels) (int)
-    //    3) Supported streaming services (std::string)
-    //    4) Power output (watts) (float)
-    //    5) Brand name (std::string)
+    //Number of speakers
+    int numberOfSpeakers = 5;
+    //Display resolution
+    int displayResolution = 1920;
+    //Supported streaming services
+    std::string supportedStreamingServices = "Netflix, Hulu, Prime Video";
+    //Power output
+    float powerOutput = 500.0f;
+    //Brand name
+    std::string brandName = "Sony";
     //3 things it can do:
-    //    1) Play movies
-    //    2) Stream music
-    //    3) Adjust audio levels
+    //Play movies
+    void playMovies();
+    //Stream music
+    void streamMusic();
+    //Adjust audio levels
+    void adjustAudioLevels();
 };
 
 struct SmartAssistant
 {
     //5 properties:
-    //    1) Wake word (std::string)
-    //    2) Supported languages (std::string)
-    //    3) Number of microphones (int)
-    //    4) Speaker power (watts) (float)
-    //    5) Connection type (Wi-Fi/Bluetooth) (std::string)
+    //Wake word
+    std::string wakeWord = "Alexa";
+    //Supported languages
+    std::string supportedLanguages = "English, Spanish, French";
+    //Number of microphones 
+    int numberOfMicrophones = 3;
+    //Speaker power
+    float speakerPower = 500.0f;
+    //Connection type
+    std::string connectionType = "Bluetooth";
     //3 things it can do:
-    //    1) Answer questions
-    //    2) Control smart devices
-    //    3) Set reminders
+    //Answer questions
+    void answerQuestions();
+    //Control smart devices
+    void controlSmartDevices();
+    //Set reminders
+    void setReminders();
 };
 
 struct SmartHome
 {
     //5 properties:
-    //    1) Lighting system
-    //    2) Security system
-    //    3) Climate control
-    //    4) Entertainment system
-    //    5) Smart assistant
+    //Lighting system
+    LightingSystem lightingSystem;
+    //Security system
+    SecuritySystem securitySystem;
+    //Climate control
+    ClimateControl climateControl;
+    //Entertainment system
+    EntertainmentSystem entertainmentSystem;
+    //Smart assistant
+    SmartAssistant smartAssistant;
     //3 things it can do:
-    //    1) automate routines
-    //    2) monitor home security
-    //    3) adjust home settings remotely
+    //automate routines
+    void automateRoutines();
+    //monitor home security
+    void monitorHomeSecurity();
+    // adjust home settings remotely
+    void adjustHomeSettingsRemotely();
 };
 /*
 =================
