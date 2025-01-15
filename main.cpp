@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1) Coffee Shop
-5 properties:
-    1) number of coffee machines (int)
-    2) number of employees (int)
-    3) amount of milk used per week (ounces) (float)
-    4) amount of profit made per week (dollars) (double)
-    5) number of cups sold per day (int)
-3 things it can do:
-    1) make coffee
-    2) charge customer
-    3) make desserts
 
-Thing 2) Grocery Store
-5 properties:
-    1) number of employees (int)
-    2) number of payment stations (int)
-    3) amount of fresh food sold per week (pounds) (float)
-    4) amount of processed food sold per week (pounds) (float)
-    5) number of transactions a day (int)
-3 things it can do:
-    1) stock shelves
-    2) charge customer
-    3) sell food
-
-Thing 3) Concert Hall
-5 properties:
-    1) number of seats (int)
-    2) number of bathrooms (int)
-    3) amount of rent (dollars) (double)
-    4) amount of profit made per week (dollars) (double)
-    5) number of concerts a week (int)
-3 things it can do:
-    1) sell tickets
-    2) book artists
-    3) sell food
-
-Thing 4) Federal Government
-5 properties:
-    1) number of agencies (int)
-    2) number of employees (int)
-    3) amount of budget (dollars) (double)
-    4) number of policies (int)
-    5) number of laws passed (int)
-3 things it can do:
-    1) create policies
-    2) pass laws
-    3) collect taxes
 */
 
 /*
@@ -338,17 +292,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10) Family Car
-5 properties:
-    1) seats
-    2) doors
-    3) trunk
-    4) engine
-    5) wheels
-3 things it can do:
-    1) transport family
-    2) play music
-    3) transport things
+
  */
 
  /*
@@ -435,65 +379,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5) Seats
-5 properties:
-    1) Material (string)
-    2) Color (string)
-    3) Height in inches (float)
-    4) Width in inches (float)
-    5) Comfortable (bool)
-3 things it can do:
-    1) provide viable means of situating passenger
-    2) provide comfort
-    3) provide heating function
 
-Thing 6) Doors
-5 properties:
-    1) Material (string)
-    2) Color (string)
-    3) Height in inches (float)
-    4) Width in inches (float)
-    5) Number of doors (int)
-3 things it can do:
-    1) provide means of entering and exiting vehicle
-    2) provide asthetic design features to car
-    3) provide protection to passenger
-
-Thing 7) Trunk
-5 properties:
-    1) Spacious (bool)
-    2) Spare tire (bool)
-    3) Height in inches (float)
-    4) Length in inches (float)
-    5) Width in inches (float)
-3 things it can do:
-    1) transport groceries
-    2) store spare tire
-    3) store items temporarily
-
-Thing 8) Engine
-5 properties:
-    1) Type (string)
-    2) Horsepower (int)
-    3) Cylinders (int)
-    4) Displacement (float)
-    5) Fuel type (string)
-3 things it can do:
-    1) provide power to vehicle
-    2) provide fuel to vehicle
-    3) provide cooling to vehicle
-
-Thing 9) Wheels
-5 properties:
-    1) Make of tires (string)
-    2) Type of rim (string)
-    3) Circumference in inches (float)
-    4) Width in inches (float)
-    5) Color of rim (string)
-3 things it can do:
-    1) transfer the engines power into motion
-    2) move the vehicle
-    3) support the vehicle's weight
  */
 
 /*
@@ -545,14 +431,125 @@ MOVE THEM to the space below this block comment and put them in numerical order
     I only want to see the 10 UDTs written BELOW this block comment, in numerical order (1 - 10).
     simply CUT and PASTE them in the space provided below:
 */
+1) Coffee Shop
+    5 properties:
+        1) number of coffee machines (int)
+        2) number of employees (int)
+        3) amount of milk used per week (ounces) (float)
+        4) amount of profit made per week (dollars) (double)
+        5) number of cups sold per day (int)
+    3 things it can do:
+        1) make coffee
+        2) charge customer
+        3) make desserts
 
+2) Grocery Store
+    5 properties:
+        1) number of employees (int)
+        2) number of payment stations (int)
+        3) amount of fresh food sold per week (pounds) (float)
+        4) amount of processed food sold per week (pounds) (float)
+        5) number of transactions a day (int)
+    3 things it can do:
+        1) stock shelves
+        2) charge customer
+        3) sell food
 
+3) Concert Hall
+    5 properties:
+        1) number of seats (int)
+        2) number of bathrooms (int)
+        3) amount of rent (dollars) (double)
+        4) amount of profit made per week (dollars) (double)
+        5) number of concerts a week (int)
+    3 things it can do:
+        1) sell tickets
+        2) book artists
+        3) sell food
 
+4) Federal Government
+    5 properties:
+        1) number of agencies (int)
+        2) number of employees (int)
+        3) amount of budget (dollars) (double)
+        4) number of policies (int)
+        5) number of laws passed (int)
+    3 things it can do:
+        1) create policies
+        2) pass laws
+        3) collect taxes
 
+5) Seats
+    5 properties:
+        1) Material (string)
+        2) Color (string)
+        3) Height in inches (float)
+        4) Width in inches (float)
+        5) Comfortable (bool)
+    3 things it can do:
+        1) provide viable means of situating passenger
+        2) provide comfort
+        3) provide heating function
+            
+6) Doors
+    5 properties:
+        1) Material (string)
+        2) Color (string)
+        3) Height in inches (float)
+        4) Width in inches (float)
+        5) Number of doors (int)
+    3 things it can do:
+        1) provide means of entering and exiting vehicle
+        2) provide asthetic design features to car
+        3) provide protection to passenger
 
+7) Trunk
+    5 properties:
+        1) Spacious (bool)
+        2) Spare tire (bool)
+        3) Height in inches (float)
+        4) Length in inches (float)
+        5) Width in inches (float)
+    3 things it can do:
+        1) transport groceries
+        2) store spare tire
+        3) store items temporarily
 
+8) Engine
+    5 properties:
+        1) Type (string)
+        2) Horsepower (int)
+        3) Cylinders (int)
+        4) Displacement (float)
+        5) Fuel type (string)
+    3 things it can do:
+        1) provide power to vehicle
+        2) provide fuel to vehicle
+        3) provide cooling to vehicle
 
+9) Wheels
+    5 properties:
+        1) Make of tires (string)
+        2) Type of rim (string)
+        3) Circumference in inches (float)
+        4) Width in inches (float)
+        5) Color of rim (string)
+    3 things it can do:
+        1) transfer the engines power into motion
+        2) move the vehicle
+        3) support the vehicle weight
 
+10) Family Car
+    5 properties:
+        1) seats
+        2) doors
+        3) trunk
+        4) engine
+        5) wheels
+    3 things it can do:
+        1) transport family
+        2) play music
+        3) transport things
 /*
 =================
 Part 1d - Step 7: Commit
