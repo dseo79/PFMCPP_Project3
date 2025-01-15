@@ -338,17 +338,17 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
+Thing 10) Family Car
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) seats
+    2) doors
+    3) trunk
+    4) engine
+    5) wheels
 3 things it can do:
-    1)
-    2)
-    3)
+    1) transport family
+    2) play music
+    3) transport things
  */
 
  /*
