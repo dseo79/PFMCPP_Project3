@@ -198,11 +198,11 @@ Part 1b - Step 2: Assignment
 
 Thing 1) Coffee Shop
 5 properties:
-    1) number of coffee machines
-    2) number of employees
-    3) amount of milk used per week
-    4) amount of profit made per week
-    5) number of cups sold per day
+    1) number of coffee machines (int)
+    2) number of employees (int)
+    3) amount of milk used per week (ounces) (float)
+    4) amount of profit made per week (dollars) (double)
+    5) number of cups sold per day (int)
 3 things it can do:
     1) make coffee
     2) charge customer
@@ -210,11 +210,11 @@ Thing 1) Coffee Shop
 
 Thing 2) Grocery Store
 5 properties:
-    1) number of employees
-    2) number of payment stations
-    3) amount of fresh food
-    4) amount of processed food
-    5) number of transactions a day
+    1) number of employees (int)
+    2) number of payment stations (int)
+    3) amount of fresh food sold per week (pounds) (float)
+    4) amount of processed food sold per week (pounds) (float)
+    5) number of transactions a day (int)
 3 things it can do:
     1) stock shelves
     2) charge customer
@@ -222,11 +222,11 @@ Thing 2) Grocery Store
 
 Thing 3) Concert Hall
 5 properties:
-    1) number of seats
-    2) number of bathrooms
-    3) amount of rent
-    4) amount of profit made per week
-    5) number of concerts a week 
+    1) number of seats (int)
+    2) number of bathrooms (int)
+    3) amount of rent (dollars) (double)
+    4) amount of profit made per week (dollars) (double)
+    5) number of concerts a week (int)
 3 things it can do:
     1) sell tickets
     2) book artists
@@ -234,11 +234,11 @@ Thing 3) Concert Hall
 
 Thing 4) Federal Government
 5 properties:
-    1) number of agencies
-    2) number of employees
-    3) amount of budget
-    4) number of policies
-    5) number of laws passed
+    1) number of agencies (int)
+    2) number of employees (int)
+    3) amount of budget (dollars) (double)
+    4) number of policies (int)
+    5) number of laws passed (int)
 3 things it can do:
     1) create policies
     2) pass laws
@@ -319,6 +319,7 @@ example:
         area in cm2 (int)
         brand (std::string)
 */
+
 
 /*
 =================
