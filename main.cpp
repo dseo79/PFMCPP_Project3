@@ -617,52 +617,142 @@ Notice that the struct name 'CarWash' conforms with the Course Coding Standard, 
 */
 struct CoffeeShop
 {
-    
+    //5 properties:
+    //    1) number of coffee machines (int)
+    //    2) number of employees (int)
+    //    3) amount of milk used per week (ounces) (float)
+    //    4) amount of profit made per week (dollars) (double)
+    //    5) number of cups sold per day (int)
+    //3 things it can do:
+    //    1) make coffee
+    //    2) charge customer
+    //    3) make desserts
 };
 
 struct GroceryStore
 {
-    
+    //5 properties:
+    //    1) number of employees (int)
+    //    2) number of payment stations (int)
+    //    3) amount of fresh food sold per week (pounds) (float)
+    //    4) amount of processed food sold per week (pounds) (float)
+    //    5) number of transactions a day (int)
+    //3 things it can do:
+    //    1) stock shelves
+    //    2) charge customer
+    //    3) sell food
 };
 
 struct ConcertHall
 {
-    
+    //5 properties:
+    //    1) number of seats (int)
+    //    2) number of bathrooms (int)
+    //    3) amount of rent (dollars) (double)
+    //    4) amount of profit made per week (dollars) (double)
+    //    5) number of concerts a week (int)
+    //3 things it can do:
+    //    1) sell tickets
+    //    2) book artists
+    //    3) sell food
 };
 
 struct FederalGovernment
 {
-
+    //5 properties:
+    //    1) number of agencies (int)
+    //    2) number of employees (int)
+    //    3) amount of budget (dollars) (double)
+    //    4) number of policies (int)
+    //    5) number of laws passed (int)
+    //3 things it can do:
+    //    1) create policies
+    //    2) pass laws
+    //    3) collect taxes
 };
 
 struct LightingSystem
 {
-    
+    //5 properties:
+    //    1) Number of lights (int)
+    //    2) Maximum brightness (lumens) (int)
+    //    3) Color temperature (Kelvin) (float)
+    //    4) Power consumption (watts) (float)
+    //    5) Brand name (std::string)
+    //3 things it can do:
+    //    1) Turn lights on/off
+    //    2) Dim lights
+    //    3) Change light color
 };
 
 struct SecuritySystem
 {
-    
+    //5 properties:
+    //    1) Number of cameras (int)
+    //    2) Numer of motion sensors (int)
+    //    3) Alarm volume (dB) (int)
+    //    4) Battery backup duration (hours) (int)
+    //    5) Monitoring service name (std::string)
+    //3 things it can do:
+    //    1) Detect motion
+    //    2) Trigger alarm
+    //    3) Record video
 };
 
 struct ClimateControl
 {
-    
+    //5 properties:
+    //    1) Current temperature (Celsius) (float)
+    //    2) Target temperature (Celsius) (float)
+    //    3) Humidity level (%) (float)
+    //    4) Fan speed levels (int)
+    //    5) Manufacturer (std::string)
+    //3 things it can do:
+    //    1) Adjust temperature
+    //    2) Control fan speed
+    //    3) Monitor air quality
 };
 
 struct EntertainmentSystem
 {
-    
+    //5 properties:
+    //    1) Number of speakers (int)
+    //    2) Display resolution (pixels) (int)
+    //    3) Supported streaming services (std::string)
+    //    4) Power output (watts) (float)
+    //    5) Brand name (std::string)
+    //3 things it can do:
+    //    1) Play movies
+    //    2) Stream music
+    //    3) Adjust audio levels
 };
 
 struct SmartAssistant
 {
-    
+    //5 properties:
+    //    1) Wake word (std::string)
+    //    2) Supported languages (std::string)
+    //    3) Number of microphones (int)
+    //    4) Speaker power (watts) (float)
+    //    5) Connection type (Wi-Fi/Bluetooth) (std::string)
+    //3 things it can do:
+    //    1) Answer questions
+    //    2) Control smart devices
+    //    3) Set reminders
 };
 
 struct SmartHome
 {
-    
+    //5 properties:
+    //    1) Lighting system
+    //    2) Security system
+    //    3) Climate control
+    //    4) Entertainment system
+    //    5) Smart assistant
+    //3 things it can do:
+    //    1) automate routines
+    //    2) monitor home security
+    //    3) adjust home settings remotely
 };
 /*
 =================
