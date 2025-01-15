@@ -479,77 +479,77 @@ MOVE THEM to the space below this block comment and put them in numerical order
         2) pass laws
         3) collect taxes
 
-5) Seats
+5) Lighting System
     5 properties:
-        1) Material (string)
-        2) Color (string)
-        3) Height in inches (float)
-        4) Width in inches (float)
-        5) Comfortable (bool)
+        1) Number of lights (int)
+        2) Maximum brightness (lumens) (int)
+        3) Color temperature (Kelvin) (float)
+        4) Power consumption (watts) (float)
+        5) Brand name (std::string)
     3 things it can do:
-        1) provide viable means of situating passenger
-        2) provide comfort
-        3) provide heating function
+        1) Turn lights on/off
+        2) Dim lights
+        3) Change light color
             
-6) Doors
+6) Security System
     5 properties:
-        1) Material (string)
-        2) Color (string)
-        3) Height in inches (float)
-        4) Width in inches (float)
-        5) Number of doors (int)
+        1) Number of cameras (int)
+        2) Numer of motion sensors (int)
+        3) Alarm volume (dB) (int)
+        4) Battery backup duration (hours) (int)
+        5) Monitoring service name (std::string)
     3 things it can do:
-        1) provide means of entering and exiting vehicle
-        2) provide asthetic design features to car
-        3) provide protection to passenger
+        1) Detect motion
+        2) Trigger alarm
+        3) Record video
 
-7) Trunk
+7) Climate Control
     5 properties:
-        1) Spacious (bool)
-        2) Spare tire (bool)
-        3) Height in inches (float)
-        4) Length in inches (float)
-        5) Width in inches (float)
+        1) Current temperature (Celsius) (float)
+        2) Target temperature (Celsius) (float)
+        3) Humidity level (%) (float)
+        4) Fan speed levels (int)
+        5) Manufacturer (std::string)
     3 things it can do:
-        1) transport groceries
-        2) store spare tire
-        3) store items temporarily
+        1) Adjust temperature
+        2) Control fan speed
+        3) Monitor air quality
 
-8) Engine
+8) Entertainment System
     5 properties:
-        1) Type (string)
-        2) Horsepower (int)
-        3) Cylinders (int)
-        4) Displacement (float)
-        5) Fuel type (string)
+        1) Number of speakers (int)
+        2) Display resolution (pixels) (int)
+        3) Supported streaming services (std::string)
+        4) Power output (watts) (float)
+        5) Brand name (std::string)
     3 things it can do:
-        1) provide power to vehicle
-        2) provide fuel to vehicle
-        3) provide cooling to vehicle
+        1) Play movies
+        2) Stream music
+        3) Adjust audio levels
 
-9) Wheels
+9) Smart Assistant
     5 properties:
-        1) Make of tires (string)
-        2) Type of rim (string)
-        3) Circumference in inches (float)
-        4) Width in inches (float)
-        5) Color of rim (string)
+        1) Wake word (std::string)
+        2) Supported languages (std::string)
+        3) Number of microphones (int)
+        4) Speaker power (watts) (float)
+        5) Connection type (Wi-Fi/Bluetooth) (std::string)
     3 things it can do:
-        1) transfer the engines power into motion
-        2) move the vehicle
-        3) support the vehicle weight
+        1) Answer questions
+        2) Control smart devices
+        3) Set reminders
 
-10) Family Car
+10) Smart Home
     5 properties:
-        1) seats
-        2) doors
-        3) trunk
-        4) engine
-        5) wheels
+        1) Lighting system
+        2) Security system
+        3) Climate control
+        4) Entertainment system
+        5) Smart assistant
     3 things it can do:
-        1) transport family
-        2) play music
-        3) transport things
+        1) automate routines
+        2) monitor home security
+        3) adjust home settings remotely
 /*
 =================
 Part 1d - Step 7: Commit
