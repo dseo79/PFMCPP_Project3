@@ -435,65 +435,65 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
+Thing 5) Seats
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Material (string)
+    2) Color (string)
+    3) Height in inches (float)
+    4) Width in inches (float)
+    5) Comfortable (bool)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) provide viable means of situating passenger
+    2) provide comfort
+    3) provide heating function
 
-Thing 6)
+Thing 6) Doors
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Material (string)
+    2) Color (string)
+    3) Height in inches (float)
+    4) Width in inches (float)
+    5) Number of doors (int)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) provide means of entering and exiting vehicle
+    2) provide asthetic design features to car
+    3) provide protection to passenger
 
-Thing 7)
+Thing 7) Trunk
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Spacious (bool)
+    2) Spare tire (bool)
+    3) Height in inches (float)
+    4) Length in inches (float)
+    5) Width in inches (float)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) transport groceries
+    2) store spare tire
+    3) store items temporarily
 
-Thing 8)
+Thing 8) Engine
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Type (string)
+    2) Horsepower (int)
+    3) Cylinders (int)
+    4) Displacement (float)
+    5) Fuel type (string)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) provide power to vehicle
+    2) provide fuel to vehicle
+    3) provide cooling to vehicle
 
-Thing 9)
+Thing 9) Wheels
 5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
+    1) Make of tires (string)
+    2) Type of rim (string)
+    3) Circumference in inches (float)
+    4) Width in inches (float)
+    5) Color of rim (string)
 3 things it can do:
-    1)
-    2)
-    3)
+    1) transfer the engines power into motion
+    2) move the vehicle
+    3) support the vehicle's weight
  */
 
 /*
