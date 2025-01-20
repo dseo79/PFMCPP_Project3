@@ -741,6 +741,23 @@ struct SecuritySystem
     int batteryBackupDuration = 24;
     //Monitoring service name
     std::string monitoringServiceName = "Security Monitoring System";
+
+    //nested UDT:
+    struct Camera
+    {
+        //5 properties:
+        bool hasNightVision = true;
+        float zoom = 1.0f;
+        int year = 2020;
+        std::string brand = "Canon";
+        std::string model = "EOS 5D Mark IV";
+
+        //3 things it can do:
+        void takePhoto();
+        void recordVideo();
+        void adjustExposure();
+    };
+    
     //3 things it can do:
     //Detect motion
     void detectMotion();
@@ -785,6 +802,23 @@ struct EntertainmentSystem
     float powerOutput = 500.0f;
     //Brand name
     std::string brandName = "Sony";
+   
+    //nested UDT:
+    struct Speaker
+    {
+        //5 properties:
+        bool hasSubwoofer = true;
+        float volume = 1.0f;
+        int year = 2020;
+        std::string brand = "Sony";
+        std::string model = "WH-1000XM4";
+
+        //3 things it can do:
+        void adjustVolume();
+        void changeAudioSettings();
+        void adjustAudioLevels();
+    };
+    
     //3 things it can do:
     //Play movies
     void playMovies();
