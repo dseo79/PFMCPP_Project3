@@ -760,11 +760,13 @@ struct SecuritySystem
     
     //3 things it can do:
     //Detect motion
-    void detectMotion();
+    void detectMotion(Camera camera);
     //Trigger alarm
     void triggerAlarm();
     //Record video
-    void recordVideo();
+    void recordVideo(Camera camera);
+    //member variable whose type is a UDT
+    Camera primaryCamera;
 };
 
 struct ClimateControl
@@ -812,6 +814,7 @@ struct EntertainmentSystem
         int year = 2020;
         std::string brand = "Sony";
         std::string model = "WH-1000XM4";
+    
 
         //3 things it can do:
         void adjustVolume();
@@ -823,9 +826,11 @@ struct EntertainmentSystem
     //Play movies
     void playMovies();
     //Stream music
-    void streamMusic();
+    void streamMusic(Speaker speaker);
     //Adjust audio levels
-    void adjustAudioLevels();
+    void adjustAudioLevels(Speaker speaker);
+    //Member variable whose type is a UDT
+    Speaker primarySpeaker;
 };
 
 struct SmartAssistant
