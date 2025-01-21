@@ -636,7 +636,7 @@ struct CoffeeShop
     void makeCoffee();
     //charge customer
     void chargeCustomer();
-    //make desserts\
+    //make desserts
     void makeDesserts();
 };
 
