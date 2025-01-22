@@ -1026,11 +1026,11 @@ struct CoffeeShop
     int numberOfCupsSoldPerDay = 100;
     //3 things it can do:
     //make coffee
-    void makeCoffee();
+    void makeCoffee(int numberofCups);
     //charge customer
-    void chargeCustomer();
+    void chargeCustomer(double amount);
     //make desserts
-    void makeDesserts();
+    void makeDesserts(int numberofDesserts);
 };
 
 struct GroceryStore
@@ -1048,11 +1048,11 @@ struct GroceryStore
     int numberOfTransactionsADay = 10;
     //3 things it can do:
     //stock shelves
-    void stockShelves();
+    void stockShelves(int numberofItems);
     //charge customer
-    void chargeCustomer();
+    void chargeCustomer(double amount);
     //sell food
-    void sellFood();
+    void sellFood(int numberofItems);
 };
 
 struct ConcertHall
@@ -1070,11 +1070,11 @@ struct ConcertHall
     int numberOfConcertsAWeek = 10;
     //3 things it can do:
     //sell tickets
-    void sellTickets();
+    void sellTickets(int numberOfTickets);
     //book artists
-    void bookArtists();
+    void bookArtists(int numberofArtists);
     //sell food
-    void sellFood();
+    void sellFood(int numberofItems);
 };
 
 struct FederalGovernment
@@ -1092,11 +1092,11 @@ struct FederalGovernment
     int numberOfLawsPassed = 200;
     //3 things it can do:
     //create policies
-    void createPolicies();
+    void createPolicies(int numberofPoliciesCreated);
     //pass laws
-    void passLaws();
+    void passLaws(int numberofLawsPassed);
     //collect taxes
-    void collectTaxes();
+    void collectTaxes(double taxAmount);
 };
 
 struct LightingSystem
@@ -1114,11 +1114,11 @@ struct LightingSystem
     std::string brandName = "Philips";
     //3 things it can do:
     //Turn lights on/off
-    void turnLightsOn();
+    void turnLightsOn(int numberofLightsToTurnOn);
     //Dim lights
-    void dimLights();
+    void dimLights(int brightnessLevel);
     //Change light color
-    void changeLightColor();
+    void changeLightColor(std::string newColor);
 };
 
 struct SecuritySystem
@@ -1146,16 +1146,16 @@ struct SecuritySystem
         std::string model = "EOS 5D Mark IV";
 
         //3 things it can do:
-        void takePhoto();
-        void recordVideo();
-        void adjustExposure();
+        void takePhoto(int numberofPhotos);
+        void recordVideo(int durationInMinutes);
+        void adjustExposure(int exposureLevel);
     };
 
     //3 things it can do:
     //Detect motion
     void detectMotion(Camera camera);
     //Trigger alarm
-    void triggerAlarm();
+    void triggerAlarm(int alarmVolumeLevel);
     //Record video
     void recordVideo(Camera camera);
     //member variable whose type is a UDT
@@ -1177,11 +1177,11 @@ struct ClimateControl
     std::string manufacturer = "Philips";
     //3 things it can do:
     //Adjust temperature
-    void adjustTemperature();
+    void adjustTemperature(float newTargetTemperature);
     //Control fan speed
-    void controlFanSpeed();
+    void controlFanSpeed(int newFanSpeedLevel);
     //Monitor air quality
-    void monitorAirQuality();
+    void monitorAirQuality(int monitoringDuration);
 };
 
 struct EntertainmentSystem
@@ -1210,14 +1210,14 @@ struct EntertainmentSystem
 
 
         //3 things it can do:
-        void adjustVolume();
-        void changeAudioSettings();
-        void adjustAudioLevels();
+        void adjustVolume(float newVolumeLevel);
+        void changeAudioSettings(std::string newAudioSetting);
+        void adjustAudioLevels(int newAudioLevel);
     };
 
     //3 things it can do:
     //Play movies
-    void playMovies();
+    void playMovies(int numberOfMovies);
     //Stream music
     void streamMusic(Speaker speaker);
     //Adjust audio levels
@@ -1241,11 +1241,11 @@ struct SmartAssistant
     std::string connectionType = "Bluetooth";
     //3 things it can do:
     //Answer questions
-    void answerQuestions();
+    void answerQuestions(int numberOfQuestions);
     //Control smart devices
-    void controlSmartDevices();
+    void controlSmartDevices(int numberOfDevices);
     //Set reminders
-    void setReminders();
+    void setReminders(int numberOfReminders);
 };
 
 struct SmartHome
@@ -1263,11 +1263,11 @@ struct SmartHome
     SmartAssistant smartAssistant;
     //3 things it can do:
     //automate routines
-    void automateRoutines();
+    void automateRoutines(int numberOfRoutines);
     //monitor home security
-    void monitorHomeSecurity();
+    void monitorHomeSecurity(int monitoringDuration);
     // adjust home settings remotely
-    void adjustHomeSettingsRemotely();
+    void adjustHomeSettingsRemotely(int numberOfSettings);
 };
 
 int main()
