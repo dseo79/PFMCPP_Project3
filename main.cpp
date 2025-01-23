@@ -83,51 +83,51 @@ Main Object: Car Interior
         Name 4 nouns you'll find on the [Sub Object]
             1) paddle shifters
             2) 'cruise control' controls
-            3) 
-            4) 
+            3) gas pedal
+            4) brake pedal
         Name 2 actions that the [Sub Object] can do:
             1) adjust cruise control settings.
-            2)
+            2) increase car speed
         
     Sub Object: Instrument Cluster
         Name 4 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
-            4)
+            1) speedometer
+            2) gas gauge
+            3) tachometer
+            4) gear indicator
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) display speed 
+            2) display gas level
+            3) display gear setting
     
     Sub Object: Environment Controls
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) air conditioner
+            2) heater
+            3) temperature gauge
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) turn on air conditioner
+            2) turn on heater
+            3) adjust temperature
 
     Sub Object: Infotainment System
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) radio
+            2) GPS
+            3) clock
         Name 3 actions that the [Sub Object] can do:
-            1)
-            2)
-            3)
+            1) play radio station
+            2) display GPS location
+            3) display current time
 
     Sub Object: Seat 
         Name 3 nouns you'll find on the [Sub Object]
-            1)
-            2)
-            3)
+            1) cushion
+            2) seat adjuster
+            3) seat belt
         Name 2 actions that the [Sub Object] can do:
-            1)
-            2)
+            1) adjust seat position
+            2) secure seat belt
 */
 
 /*
@@ -196,53 +196,7 @@ Part 1b - Step 2: Assignment
         c) pick properties that can eventually be represented with 
         'int float double bool char std::string'.
 
-Thing 1)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 2)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 3)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 4)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 */
 
 /*
@@ -320,6 +274,7 @@ example:
         brand (std::string)
 */
 
+
 /*
 =================
 Part 1c - Step 3: Commit
@@ -337,17 +292,7 @@ Define an object that is made of 5 sub-objects.
     These 5 sub-objects will not be defined using Primitives, but instead will be their own UDTs 
     you'll define these 5 sub-objects in Part 1d.
 
-Thing 10)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
+
  */
 
  /*
@@ -434,65 +379,7 @@ example:
     You will need to provide 5 properties and 3 member functions of that Engine object in plain English.
     Remember to pick properties that can be represented with 'int float double bool char std::string'.
 
-Thing 5)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
 
-Thing 6)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 7)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 8)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
-
-Thing 9)
-5 properties:
-    1)
-    2)
-    3)
-    4)
-    5)
-3 things it can do:
-    1)
-    2)
-    3)
  */
 
 /*
@@ -545,12 +432,127 @@ MOVE THEM to the space below this block comment and put them in numerical order
     simply CUT and PASTE them in the space provided below:
 */
 
+/*
+1) Coffee Shop
+    5 properties:
+        1) number of coffee machines (int)
+        2) number of employees (int)
+        3) amount of milk used per week (ounces) (float)
+        4) amount of profit made per week (dollars) (double)
+        5) number of cups sold per day (int)
+    3 things it can do:
+        1) make coffee
+        2) charge customer
+        3) make desserts
 
+2) Grocery Store
+    5 properties:
+        1) number of employees (int)
+        2) number of payment stations (int)
+        3) amount of fresh food sold per week (pounds) (float)
+        4) amount of processed food sold per week (pounds) (float)
+        5) number of transactions a day (int)
+    3 things it can do:
+        1) stock shelves
+        2) charge customer
+        3) sell food
 
+3) Concert Hall
+    5 properties:
+        1) number of seats (int)
+        2) number of bathrooms (int)
+        3) amount of rent (dollars) (double)
+        4) amount of profit made per week (dollars) (double)
+        5) number of concerts a week (int)
+    3 things it can do:
+        1) sell tickets
+        2) book artists
+        3) sell food
 
+4) Federal Government
+    5 properties:
+        1) number of agencies (int)
+        2) number of employees (int)
+        3) amount of budget (dollars) (double)
+        4) number of policies (int)
+        5) number of laws passed (int)
+    3 things it can do:
+        1) create policies
+        2) pass laws
+        3) collect taxes
 
+5) Lighting System
+    5 properties:
+        1) Number of lights (int)
+        2) Maximum brightness (lumens) (int)
+        3) Color temperature (Kelvin) (float)
+        4) Power consumption (watts) (float)
+        5) Brand name (std::string)
+    3 things it can do:
+        1) Turn lights on/off
+        2) Dim lights
+        3) Change light color
+            
+6) Security System
+    5 properties:
+        1) Number of cameras (int)
+        2) Numer of motion sensors (int)
+        3) Alarm volume (dB) (int)
+        4) Battery backup duration (hours) (int)
+        5) Monitoring service name (std::string)
+    3 things it can do:
+        1) Detect motion
+        2) Trigger alarm
+        3) Record video
 
+7) Climate Control
+    5 properties:
+        1) Current temperature (Celsius) (float)
+        2) Target temperature (Celsius) (float)
+        3) Humidity level (%) (float)
+        4) Fan speed levels (int)
+        5) Manufacturer (std::string)
+    3 things it can do:
+        1) Adjust temperature
+        2) Control fan speed
+        3) Monitor air quality
 
+8) Entertainment System
+    5 properties:
+        1) Number of speakers (int)
+        2) Display resolution (pixels) (int)
+        3) Supported streaming services (std::string)
+        4) Power output (watts) (float)
+        5) Brand name (std::string)
+    3 things it can do:
+        1) Play movies
+        2) Stream music
+        3) Adjust audio levels
+
+9) Smart Assistant
+    5 properties:
+        1) Wake word (std::string)
+        2) Supported languages (std::string)
+        3) Number of microphones (int)
+        4) Speaker power (watts) (float)
+        5) Connection type (Wi-Fi/Bluetooth) (std::string)
+    3 things it can do:
+        1) Answer questions
+        2) Control smart devices
+        3) Set reminders
+
+10) Smart Home
+    5 properties:
+        1) Lighting system
+        2) Security system
+        3) Climate control
+        4) Entertainment system
+        5) Smart assistant
+    3 things it can do:
+        1) automate routines
+        2) monitor home security
+        3) adjust home settings remotely
+*/
 
 /*
 =================
@@ -1010,13 +1012,263 @@ Part 1e - Step 19: Request a review
 paste your code below
 */
 
+struct CoffeeShop
+{
+    //number of coffee machines
+    int numberOfCoffeeMachines = 3;
+    //number of employees
+    int numberOfEmployees = 10;
+    //amount of milk used per week
+    float amountOfMilkUsedPerWeek = 750.0f;    
+    //amount of profit made per week
+    double amountOfProfitMadePerWeek = 10000.00;
+    //number of cups sold per day
+    int numberOfCupsSoldPerDay = 100;
+    //3 things it can do:
+    //make coffee
+    void makeCoffee(int numberofCups);
+    //charge customer
+    void chargeCustomer(double amount);
+    //make desserts
+    void makeDesserts(int numberofDesserts);
+};
+
+struct GroceryStore
+{
+    //5 properties:
+    //number of employees
+    int numberOfEmployees = 5;
+    //number of payment stations
+    int numberOfPaymentStations = 3;
+    //amount of fresh food sold per week
+    float amountOfFreshFoodSoldPerWeek = 100.0f;
+    //amount of processed food sold per week
+    float amountOfProcessedFoodSoldPerWeek = 50.0f;
+    //number of transactions a day
+    int numberOfTransactionsADay = 10;
+    //3 things it can do:
+    //stock shelves
+    void stockShelves(int numberofItems);
+    //charge customer
+    void chargeCustomer(double amount);
+    //sell food
+    void sellFood(int numberofItems);
+};
+
+struct ConcertHall
+{
+    //5 properties:
+    //number of seats
+    int numberOfSeats = 200;
+    //number of bathrooms
+    int numberOfBathrooms = 5;
+    //amount of rent
+    double amountOfRent = 5000.00;
+    //amount of profit made per week
+    double amountOfProfitMadePerWeek = 10000.00;
+    //number of concerts a week
+    int numberOfConcertsAWeek = 10;
+    //3 things it can do:
+    //sell tickets
+    void sellTickets(int numberOfTickets);
+    //book artists
+    void bookArtists(int numberofArtists);
+    //sell food
+    void sellFood(int numberofItems);
+};
+
+struct FederalGovernment
+{
+    //5 properties:
+    //number of agencies
+    int numberOfAgencies = 100;
+    //number of employees
+    int numberOfEmployees = 1000;
+    //amount of budget
+    double amountOfBudget = 50000.00;
+    //number of policies
+    int numberOfPolicies = 50;
+    //number of laws passed
+    int numberOfLawsPassed = 200;
+    //3 things it can do:
+    //create policies
+    void createPolicies(int numberofPoliciesCreated);
+    //pass laws
+    void passLaws(int numberofLawsPassed);
+    //collect taxes
+    void collectTaxes(double taxAmount);
+};
+
+struct LightingSystem
+{
+    //5 properties:
+    //Number of lights
+    int numberOfLights = 100;
+    //Maximum brightness
+    int maximumBrightness = 1000;
+    //Color temperature
+    float colorTemperature = 5000.0f;
+    //Power consumption
+    float powerConsumption = 500.0f;
+    //Brand name
+    std::string brandName = "Philips";
+    //3 things it can do:
+    //Turn lights on/off
+    void turnLightsOn(int numberofLightsToTurnOn);
+    //Dim lights
+    void dimLights(int brightnessLevel);
+    //Change light color
+    void changeLightColor(std::string newColor);
+};
+
+struct SecuritySystem
+{
+    //5 properties:
+    //Number of cameras
+    int numberOfCameras = 10;
+    //Numer of motion sensors
+    int numberOfMotionSensors = 5;
+    //Alarm volume (dB)
+    int alarmVolume = 100;
+    //Battery backup duration
+    int batteryBackupDuration = 24;
+    //Monitoring service name
+    std::string monitoringServiceName = "Security Monitoring System";
+
+    //nested UDT:
+    struct Camera
+    {
+        //5 properties:
+        bool hasNightVision = true;
+        float zoom = 1.0f;
+        int year = 2020;
+        std::string brand = "Canon";
+        std::string model = "EOS 5D Mark IV";
+
+        //3 things it can do:
+        void takePhoto(int numberofPhotos);
+        void recordVideo(int durationInMinutes);
+        void adjustExposure(int exposureLevel);
+    };
+
+    //3 things it can do:
+    //Detect motion
+    void detectMotion(Camera camera);
+    //Trigger alarm
+    void triggerAlarm(int alarmVolumeLevel);
+    //Record video
+    void recordVideo(Camera camera);
+    //member variable whose type is a UDT
+    Camera primaryCamera;
+};
+
+struct ClimateControl
+{
+    //5 properties:
+    //Current temperature
+    float currentTemperature = 25.0f;
+    //Target temperature
+    float targetTemperature = 30.0f;
+    //Humidity level
+    float humidityLevel = 50.0f;
+    //Fan speed levels
+    int fanSpeedLevels = 3;
+    //Manufacturer
+    std::string manufacturer = "Philips";
+    //3 things it can do:
+    //Adjust temperature
+    void adjustTemperature(float newTargetTemperature);
+    //Control fan speed
+    void controlFanSpeed(int newFanSpeedLevel);
+    //Monitor air quality
+    void monitorAirQuality(int monitoringDuration);
+};
+
+struct EntertainmentSystem
+{
+    //5 properties:
+    //Number of speakers
+    int numberOfSpeakers = 5;
+    //Display resolution
+    int displayResolution = 1920;
+    //Supported streaming services
+    std::string supportedStreamingServices = "Netflix, Hulu, Prime Video";
+    //Power output
+    float powerOutput = 500.0f;
+    //Brand name
+    std::string brandName = "Sony";
+
+    //nested UDT:
+    struct Speaker
+    {
+        //5 properties:
+        bool hasSubwoofer = true;
+        float volume = 1.0f;
+        int year = 2020;
+        std::string brand = "Sony";
+        std::string model = "WH-1000XM4";
 
 
+        //3 things it can do:
+        void adjustVolume(float newVolumeLevel);
+        void changeAudioSettings(std::string newAudioSetting);
+        void adjustAudioLevels(int newAudioLevel);
+    };
 
+    //3 things it can do:
+    //Play movies
+    void playMovies(int numberOfMovies);
+    //Stream music
+    void streamMusic(Speaker speaker);
+    //Adjust audio levels
+    void adjustAudioLevels(Speaker speaker);
+    //Member variable whose type is a UDT
+    Speaker primarySpeaker;
+};
 
+struct SmartAssistant
+{
+    //5 properties:
+    //Wake word
+    std::string wakeWord = "Alexa";
+    //Supported languages
+    std::string supportedLanguages = "English, Spanish, French";
+    //Number of microphones 
+    int numberOfMicrophones = 3;
+    //Speaker power
+    float speakerPower = 500.0f;
+    //Connection type
+    std::string connectionType = "Bluetooth";
+    //3 things it can do:
+    //Answer questions
+    void answerQuestions(int numberOfQuestions);
+    //Control smart devices
+    void controlSmartDevices(int numberOfDevices);
+    //Set reminders
+    void setReminders(int numberOfReminders);
+};
 
-
-
+struct SmartHome
+{
+    //5 properties:
+    //Lighting system
+    LightingSystem lightingSystem;
+    //Security system
+    SecuritySystem securitySystem;
+    //Climate control
+    ClimateControl climateControl;
+    //Entertainment system
+    EntertainmentSystem entertainmentSystem;
+    //Smart assistant
+    SmartAssistant smartAssistant;
+    //3 things it can do:
+    //automate routines
+    void automateRoutines(int numberOfRoutines);
+    //monitor home security
+    void monitorHomeSecurity(int monitoringDuration);
+    // adjust home settings remotely
+    void adjustHomeSettingsRemotely(int numberOfSettings);
+};
 
 int main()
 {
