@@ -108,9 +108,41 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Foot
+{
+    int stepSize;
+    void stepForward();
 
+};
 
-
+    struct Person
+        {    
+        int age;
+        int height;
+        float hairLength;
+        float GPA;
+        unsigned int SATScore;
+        int distanceTraveled;
+        Foot leftFoot;
+        Foot rightFoot;
+    
+        void run(bool startWithLeftFoot);
+        };
+    
+void Person::run(bool startWithLeftFoot)
+{
+    if(startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize + rightFoot.stepSize;
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -145,6 +177,18 @@ struct CoffeeShop
     void makeDesserts(int numberofDesserts);
 };
 
+void CoffeeShop::makeCoffee(int numberOfCups) {
+    std::cout << "Making " << numberOfCups << " cups of coffee." << std::endl;
+}
+
+void CoffeeShop::chargeCustomer(double amount) {
+    std::cout << "Charging customer: $" << amount << std::endl;
+}
+
+void CoffeeShop::makeDesserts(int numberOfDesserts) {
+    std::cout << "Making " << numberOfDesserts << " desserts." << std::endl;
+}
+
 struct GroceryStore
 {
     int numberOfEmployees = 5;
@@ -157,6 +201,18 @@ struct GroceryStore
     void chargeCustomer(double amount);
     void sellFood(int numberofItems);
 };
+
+void GroceryStore::stockShelves(int numberOfItems) {
+    std::cout << "Stocking " << numberOfItems << " items." << std::endl;
+}
+
+void GroceryStore::chargeCustomer(double amount) {
+    std::cout << "Charging customer: $" << amount << std::endl;
+}
+
+void GroceryStore::sellFood(int numberOfItems) {
+    std::cout << "Selling " << numberOfItems << " food items." << std::endl;
+}
 
 struct ConcertHall
 {
@@ -171,7 +227,19 @@ struct ConcertHall
     void sellFood(int numberofItems);
 };
 
-struct FederalGovernment
+void ConcertHall::sellTickets(int numberOfTickets) {
+    std::cout << "Selling " << numberOfTickets << " tickets." << std::endl;
+}
+
+void ConcertHall::bookArtists(int numberOfArtists) {
+    std::cout << "Booking " << numberOfArtists << " artists." << std::endl;
+}
+
+void ConcertHall::sellFood(int numberOfItems) {
+    std::cout << "Selling " << numberOfItems << " food items." << std::endl;
+}
+
+struct LocalGovernment
 {
     int numberOfAgencies = 100;
     int numberOfEmployees = 1000;
@@ -183,6 +251,18 @@ struct FederalGovernment
     void passLaws(int numberofLawsPassed);
     void collectTaxes(double taxAmount);
 };
+
+void LocalGovernment::createPolicies(int numberOfPoliciesCreated) {
+    std::cout << "Creating " << numberOfPoliciesCreated << " policies." << std::endl;
+}
+
+void LocalGovernment::passLaws(int LawsPassed) {
+    std::cout << "Passing " << LawsPassed << " laws." << std::endl;
+}
+
+void LocalGovernment::collectTaxes(double taxAmount) {
+    std::cout << "Collecting taxes: $" << taxAmount << std::endl;
+}
 
 struct LightingSystem
 {
@@ -196,6 +276,18 @@ struct LightingSystem
     void dimLights(int brightnessLevel);
     void changeLightColor(std::string newColor);
 };
+
+void LightingSystem::turnLightsOn(int numberOfLightsToTurnOn) {
+    std::cout << "Turning on " << numberOfLightsToTurnOn << " lights." << std::endl;
+}
+
+void LightingSystem::dimLights(int brightnessLevel) {
+    std::cout << "Dimming lights to " << brightnessLevel << " brightness." << std::endl;
+}
+
+void LightingSystem::changeLightColor(std::string newColor) {
+    std::cout << "Changing light color to " << newColor << "." << std::endl;
+}
 
 struct SecuritySystem
 {
@@ -225,6 +317,30 @@ struct SecuritySystem
     Camera primaryCamera;
 };
 
+void SecuritySystem::Camera::takePhoto(int numberOfPhotos) {
+    std::cout << "Taking " << numberOfPhotos << " photos." << std::endl;
+}
+
+void SecuritySystem::Camera::recordVideo(int durationInMinutes) {
+    std::cout << "Recording video for " << durationInMinutes << " minutes." << std::endl;
+}
+
+void SecuritySystem::Camera::adjustExposure(int exposureLevel) {
+    std::cout << "Adjusting exposure to level " << exposureLevel << "." << std::endl;
+}
+
+void SecuritySystem::detectMotion(Camera camera) {
+    std::cout << "Detecting motion using camera: " << camera.brand << std::endl;
+}
+
+void SecuritySystem::triggerAlarm(int alarmVolumeLevel) {
+    std::cout << "Triggering alarm with volume: " << alarmVolumeLevel << std::endl;
+}
+
+void SecuritySystem::recordVideo(Camera camera) {
+    std::cout << "Recording video with camera: " << camera.brand << std::endl;
+}
+
 struct ClimateControl
 {
     float currentTemperature = 25.0f;
@@ -237,6 +353,18 @@ struct ClimateControl
     void controlFanSpeed(int newFanSpeedLevel);
     void monitorAirQuality(int monitoringDuration);
 };
+
+void ClimateControl::adjustTemperature(float newTargetTemperature) {
+    std::cout << "Adjusting temperature to " << newTargetTemperature << " degrees." << std::endl;
+}
+
+void ClimateControl::controlFanSpeed(int newFanSpeedLevel) {
+    std::cout << "Setting fan speed to level " << newFanSpeedLevel << "." << std::endl;
+}
+
+void ClimateControl::monitorAirQuality(int monitoringDuration) {
+    std::cout << "Monitoring air quality for " << monitoringDuration << " minutes." << std::endl;
+}
 
 struct EntertainmentSystem
 {
@@ -266,6 +394,30 @@ struct EntertainmentSystem
     Speaker primarySpeaker;
 };
 
+void EntertainmentSystem::Speaker::adjustVolume(float newVolumeLevel) {
+    std::cout << "Adjusting volume to " << newVolumeLevel << "." << std::endl;
+}
+
+void EntertainmentSystem::Speaker::changeAudioSettings(std::string newAudioSetting) {
+    std::cout << "Changing audio settings to " << newAudioSetting << "." << std::endl;
+}
+
+void EntertainmentSystem::Speaker::adjustAudioLevels(int newAudioLevel) {
+    std::cout << "Adjusting audio level to " << newAudioLevel << "." << std::endl;
+}
+
+void EntertainmentSystem::playMovies(int numberOfMovies) {
+    std::cout << "Playing " << numberOfMovies << " movies." << std::endl;
+}
+
+void EntertainmentSystem::streamMusic(Speaker speaker) {
+    std::cout << "Streaming music using speaker: " << speaker.brand << std::endl;
+}
+
+void EntertainmentSystem::adjustAudioLevels(Speaker speaker) {
+    std::cout << "Adjusting audio levels for speaker: " << speaker.brand << std::endl;
+}
+
 struct SmartAssistant
 {
 
@@ -280,6 +432,18 @@ struct SmartAssistant
     void setReminders(int numberOfReminders);
 };
 
+void SmartAssistant::answerQuestions(int numberOfQuestions) {
+    std::cout << "Answering " << numberOfQuestions << " questions." << std::endl;
+}
+
+void SmartAssistant::controlSmartDevices(int numberOfDevices) {
+    std::cout << "Controlling " << numberOfDevices << " devices." << std::endl;
+}
+
+void SmartAssistant::setReminders(int numberOfReminders) {
+    std::cout << "Setting " << numberOfReminders << " reminders." << std::endl;
+}
+
 struct SmartHome
 {
 
@@ -293,6 +457,18 @@ struct SmartHome
     void monitorHomeSecurity(int monitoringDuration);
     void adjustHomeSettingsRemotely(int numberOfSettings);
 };
+
+void SmartHome::automateRoutines(int numberOfRoutines) {
+    std::cout << "Automating " << numberOfRoutines << " routines." << std::endl;
+}
+
+void SmartHome::monitorHomeSecurity(int monitoringDuration) {
+    std::cout << "Monitoring home security for " << monitoringDuration << " minutes." << std::endl;
+}
+
+void SmartHome::adjustHomeSettingsRemotely(int numberOfSettings) {
+    std::cout << "Adjusting " << numberOfSettings << " home settings remotely." << std::endl;
+}
 
 int main()
 {
