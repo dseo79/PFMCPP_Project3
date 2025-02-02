@@ -174,9 +174,9 @@ struct CoffeeShop
     double amountOfProfitMadePerWeek = 10000.00;
     int numberOfCupsSoldPerDay = 100;
 
-    void makeCoffee(int numberofCups);
+    void makeCoffee(int numberOfCups);
     void computeAmountToChargeCustomer(double amount, double discount, int loyaltyPoints);
-    void makeDesserts(int numberofDesserts);
+    void makeDesserts(int numberOfDesserts);
 };
 
 void CoffeeShop::computeAmountToChargeCustomer(double amount, double discount, int loyaltyPoints) 
@@ -184,6 +184,8 @@ void CoffeeShop::computeAmountToChargeCustomer(double amount, double discount, i
     double discountAmount = amount * (discount / 100);
     double loyaltyDiscount = loyaltyPoints * 0.5;
     double finalAmount = amount - discountAmount - loyaltyDiscount;
+
+    std::cout << "The final amount to charge the customer is: " << finalAmount << std::endl;
 }
 
 struct GroceryStore
@@ -204,6 +206,8 @@ void GroceryStore::computeTotalCustomerBill(double amount, double discount, doub
 {
     double discountedAmount = amount - (amount * discount);
     double finalAmount = discountedAmount + (discountedAmount * taxRate);
+
+    std::cout << "The final amount to charge the customer is: " << finalAmount << std::endl;
 }
 
 struct ConcertHall
@@ -225,6 +229,8 @@ void ConcertHall::computeProfitMadePerMonth(int totalNumTicketsSold)
 {
     double totalDollarsTicketsSold = totalNumTicketsSold * costOfTicket;
     double profitPerMonth = totalDollarsTicketsSold - amountOfMonthlyRent - monthlyExpenses;
+
+    std::cout << "The profit made per month is: " << profitPerMonth << std::endl;
 }
 
 struct LocalGovernment
@@ -508,17 +514,23 @@ struct SmartHome
     void adjustHomeSettingsRemotely(int numberOfSettings);
 };
 
-void SmartHome::controlLightingSystem(int brightnessLevel, float newColorTemperature, float newPowerConsumption);
+void SmartHome::controlLightingSystem(int brightnessLevel, float newColorTemperature, float newPowerConsumption)
+{
+    std::cout << "Adjusting lighting system: "
+    << "Brightness: " << brightnessLevel << "%, "
+    << "Color Temperature: " << newColorTemperature << "K, "
+    << "Power Consumption: " << newPowerConsumption << "W." << std::endl;
+}
+    void SmartHome::automateRoutines(int numberOfRoutines) 
 {
     std::cout << "Automating " << numberOfRoutines << " routines." << std::endl;
 }
 
-void SmartHome::monitorHomeSecurity(int monitoringDuration) 
+    void SmartHome::monitorHomeSecurity(int monitoringDuration) 
 {
     std::cout << "Monitoring home security for " << monitoringDuration << " minutes." << std::endl;
 }
-
-void SmartHome::adjustHomeSettingsRemotely(int numberOfSettings) 
+    void SmartHome::adjustHomeSettingsRemotely(int numberOfSettings)
 {
     std::cout << "Adjusting " << numberOfSettings << " home settings remotely." << std::endl;
 }
