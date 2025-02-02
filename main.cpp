@@ -175,11 +175,11 @@ struct CoffeeShop
     int numberOfCupsSoldPerDay = 100;
 
     void makeCoffee(int numberofCups);
-    void chargeCustomer(double amount, double discount = 0.0, int loyaltyPoints = 0);
+    void computeAmountToChargeCustomer(double amount, double discount, int loyaltyPoints);
     void makeDesserts(int numberofDesserts);
 };
 
-void CoffeeShop::chargeCustomer(double amount, double discount, int loyaltyPoints) 
+void CoffeeShop::computeAmountToChargeCustomer(double amount, double discount, int loyaltyPoints) 
 {
     double discountAmount = amount * (discount / 100);
     double loyaltyDiscount = loyaltyPoints * 0.5;
@@ -188,49 +188,43 @@ void CoffeeShop::chargeCustomer(double amount, double discount, int loyaltyPoint
 
 struct GroceryStore
 {
-    int numberOfEmployees = 5;
+    int numEmployees = 5;
     int hoursAWeek = 40;
     int numberOfPaymentStations = 3;
     float amountOfFreshFoodSoldPerWeek = 100.0f;
     float amountOfProcessedFoodSoldPerWeek = 50.0f;
     int numberOfTransactionsADay = 10;
 
-    void timeToStockShelves(int numberofItems);
-    void chargeCustomer(double amount);
-    void sellFood(int numberofItems);
+    void StockShelves(int numberofItems);
+    void computeTotalCustomerBill(double amount, double discount, double taxRate);
+    void yearlyTotalPayroll(int salary);
 };
 
-void GroceryStore::stockShelves(int numberOfItems) 
+void GroceryStore::computeTotalCustomerBill(double amount, double discount, double taxRate) 
 {
-    std::cout << "Stocking " << numberOfItems << " items." << std::endl;
+    double discountedAmount = amount - (amount * discount);
+    double finalAmount = discountedAmount + (discountedAmount * taxRate);
 }
 
 struct ConcertHall
 {
     int numberOfSeats = 200;
     int numberOfBathrooms = 5;
-    double amountOfRent = 5000.00;
+    double amountOfMonthlyRent = 5000.00;
     double amountOfProfitMadePerWeek = 10000.00;
+    double costOfTicket = 50.00;
+    double monthlyExpenses = 2000.00;
     int numberOfConcertsAWeek = 10;
 
     void sellTickets(int numberOfTickets);
     void bookArtists(int numberofArtists);
-    void sellFood(int numberofItems);
+    void computeProfitMadePerMonth(int totalNumTicketsSold);
 };
 
-void ConcertHall::sellTickets(int numberOfTickets) 
+void ConcertHall::computeProfitMadePerMonth(int totalNumTicketsSold)
 {
-    std::cout << "Selling " << numberOfTickets << " tickets." << std::endl;
-}
-
-void ConcertHall::bookArtists(int numberOfArtists) 
-{
-    std::cout << "Booking " << numberOfArtists << " artists." << std::endl;
-}
-
-void ConcertHall::sellFood(int numberOfItems) 
-{
-    std::cout << "Selling " << numberOfItems << " food items." << std::endl;
+    double totalDollarsTicketsSold = totalNumTicketsSold * costOfTicket;
+    double profitPerMonth = totalDollarsTicketsSold - amountOfMonthlyRent - monthlyExpenses;
 }
 
 struct LocalGovernment
@@ -243,22 +237,13 @@ struct LocalGovernment
 
     void createPolicies(int numberofPoliciesCreated);
     void passLaws(int numberofLawsPassed);
-    void collectTaxes(double taxAmount);
+    void collectTaxes(double taxAmount, double taxRate, int numberOfResidents);
 };
 
-void LocalGovernment::createPolicies(int numberOfPoliciesCreated) 
+    void LocalGovernment::collectTaxes(double taxAmount, double taxRate, int numberOfResidents)
 {
-    std::cout << "Creating " << numberOfPoliciesCreated << " policies." << std::endl;
-}
-
-void LocalGovernment::passLaws(int LawsPassed) 
-{
-    std::cout << "Passing " << LawsPassed << " laws." << std::endl;
-}
-
-void LocalGovernment::collectTaxes(double taxAmount) 
-{
-    std::cout << "Collecting taxes: $" << taxAmount << std::endl;
+    double collectedTaxes = taxAmount * taxRate * numberOfResidents;
+    amountOfBudget += collectedTaxes;
 }
 
 struct LightingSystem
@@ -269,24 +254,28 @@ struct LightingSystem
     float powerConsumption = 500.0f;
     std::string brandName = "Philips";
 
-    void turnLightsOn(int numberofLightsToTurnOn);
-    void dimLights(int brightnessLevel);
-    void changeLightColor(std::string newColor);
+    void configureLightingSystem(int numberOfLightsToConfigure, int brightnessLevel, float       newColorTemperature, float newPowerConsumption);
 };
 
-void LightingSystem::turnLightsOn(int numberOfLightsToTurnOn) 
+    void LightingSystem::configureLightingSystem(int numberOfLightsToConfigure, int brightnessLevel, float newColorTemperature, float newPowerConsumption)
 {
-    std::cout << "Turning on " << numberOfLightsToTurnOn << " lights." << std::endl;
+    if (numberOfLightsToConfigure <= 0)
+    {
+        std::cout << "Invalid number of lights. Please choose a positive number of lights." << std::endl; 
+    } 
+    const int maxLights = 1000;
+    if (numberOfLightsToConfigure > maxLights)
+    {
+        std::cout << "The number of lights exceeds the maximum allowable limit of " << maxLights << " lights." << std::endl;
+    }
+    if (brightnessLevel < 0 || brightnessLevel > maximumBrightness)
+    {
+        std::cout << "Invalid brightness level. Please choose a value between 0 and " << maximumBrightness << "." << std::endl;
 }
-
-void LightingSystem::dimLights(int brightnessLevel) 
-{
-    std::cout << "Dimming lights to " << brightnessLevel << " brightness." << std::endl;
-}
-
-void LightingSystem::changeLightColor(std::string newColor) 
-{
-    std::cout << "Changing light color to " << newColor << "." << std::endl;
+    numberOfLights = numberOfLightsToConfigure;
+    maximumBrightness = brightnessLevel;
+    colorTemperature = newColorTemperature;
+    powerConsumption = newPowerConsumption;
 }
 
 struct SecuritySystem
@@ -358,6 +347,8 @@ struct ClimateControl
     void adjustTemperature(float newTargetTemperature);
     void controlFanSpeed(int newFanSpeedLevel);
     void monitorAirQuality(int monitoringDuration);
+
+    void adjustClimateControl(float newTargetTemperature, int newFanSpeedLevel, int monitoringDuration);
 };
 
 void ClimateControl::adjustTemperature(float newTargetTemperature) 
@@ -373,6 +364,13 @@ void ClimateControl::controlFanSpeed(int newFanSpeedLevel)
 void ClimateControl::monitorAirQuality(int monitoringDuration) 
 {
     std::cout << "Monitoring air quality for " << monitoringDuration << " minutes." << std::endl;
+}
+
+void ClimateControl::adjustClimateControl(float newTargetTemperature, int newFanSpeedLevel, int monitoringDuration) 
+{
+    adjustTemperature(newTargetTemperature);
+    controlFanSpeed(newFanSpeedLevel);      
+    monitorAirQuality(monitoringDuration);  
 }
 
 struct EntertainmentSystem
@@ -400,6 +398,8 @@ struct EntertainmentSystem
     void streamMusic(Speaker speaker);
     void adjustAudioLevels(Speaker speaker);
 
+    void adjustEntertainmentSystemSettings(int newNumberOfSpeakers, int newDisplayResolution, float newVolumeLevel, std::string newAudioSetting, int newAudioLevel);
+
     Speaker primarySpeaker;
 };
 
@@ -413,7 +413,8 @@ void EntertainmentSystem::Speaker::changeAudioSettings(std::string newAudioSetti
     std::cout << "Changing audio settings to " << newAudioSetting << "." << std::endl;
 }
 
-void EntertainmentSystem::Speaker::adjustAudioLevels(int newAudioLevel) {
+void EntertainmentSystem::Speaker::adjustAudioLevels(int newAudioLevel) 
+{
     std::cout << "Adjusting audio level to " << newAudioLevel << "." << std::endl;
 }
 
@@ -432,9 +433,22 @@ void EntertainmentSystem::adjustAudioLevels(Speaker speaker)
     std::cout << "Adjusting audio levels for speaker: " << speaker.brand << std::endl;
 }
 
+void EntertainmentSystem::adjustEntertainmentSystemSettings(int newNumberOfSpeakers, int newDisplayResolution, float newVolumeLevel, std::string newAudioSetting, int newAudioLevel)
+{
+    numberOfSpeakers = newNumberOfSpeakers;
+    displayResolution = newDisplayResolution;
+
+    primarySpeaker.adjustVolume(newVolumeLevel);
+    primarySpeaker.changeAudioSettings(newAudioSetting);
+    primarySpeaker.adjustAudioLevels(newAudioLevel);
+
+    std::cout << "Entertainment system updated: " << std::endl;
+    std::cout << "Number of Speakers: " << numberOfSpeakers << std::endl;
+    std::cout << "Display Resolution: " << displayResolution << std::endl;
+}
+
 struct SmartAssistant
 {
-
     std::string wakeWord = "Alexa";
     std::string supportedLanguages = "English, Spanish, French";
     int numberOfMicrophones = 3;
@@ -444,6 +458,8 @@ struct SmartAssistant
     void answerQuestions(int numberOfQuestions);
     void controlSmartDevices(int numberOfDevices);
     void setReminders(int numberOfReminders);
+
+    void adjustSmartAssistantSettings(std::string newWakeWord, std::string newSupportedLanguages, int newNumberOfMicrophones, float newSpeakerPower, std::string newConnectionType);
 };
 
 void SmartAssistant::answerQuestions(int numberOfQuestions) 
@@ -461,6 +477,22 @@ void SmartAssistant::setReminders(int numberOfReminders)
     std::cout << "Setting " << numberOfReminders << " reminders." << std::endl;
 }
 
+void SmartAssistant::adjustSmartAssistantSettings(std::string newWakeWord, std::string newSupportedLanguages, int newNumberOfMicrophones, float newSpeakerPower, std::string newConnectionType)
+{
+    wakeWord = newWakeWord;
+    supportedLanguages = newSupportedLanguages;
+    numberOfMicrophones = newNumberOfMicrophones;
+    speakerPower = newSpeakerPower;
+    connectionType = newConnectionType;
+
+    std::cout << "Smart Assistant settings updated: " << std::endl;
+    std::cout << "Wake Word: " << wakeWord << std::endl;
+    std::cout << "Supported Languages: " << supportedLanguages << std::endl;
+    std::cout << "Number of Microphones: " << numberOfMicrophones << std::endl;
+    std::cout << "Speaker Power: " << speakerPower << " Watts" << std::endl;
+    std::cout << "Connection Type: " << connectionType << std::endl;
+}
+
 struct SmartHome
 {
 
@@ -470,12 +502,13 @@ struct SmartHome
     EntertainmentSystem entertainmentSystem;
     SmartAssistant smartAssistant;
 
+    void controlLightingSystem(int brightnessLevel, float newColorTemperature, float newPowerConsumption);
     void automateRoutines(int numberOfRoutines);
     void monitorHomeSecurity(int monitoringDuration);
     void adjustHomeSettingsRemotely(int numberOfSettings);
 };
 
-void SmartHome::automateRoutines(int numberOfRoutines) 
+void SmartHome::controlLightingSystem(int brightnessLevel, float newColorTemperature, float newPowerConsumption);
 {
     std::cout << "Automating " << numberOfRoutines << " routines." << std::endl;
 }
