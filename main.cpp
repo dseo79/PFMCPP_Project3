@@ -110,10 +110,10 @@ struct CarWash
 
 struct Foot
 {
-    int stepSize;
-    void stepForward(int howFast)
+    int stepSize() { return 5; }
+    void stepForward()
     {
-        stepSize = howFast / 2;
+        std::cout << "stepping forward!" << std::endl;
     }
 };
 
@@ -135,15 +135,15 @@ void Person::run(int howFast, bool startWithLeftFoot)
 {
     if(startWithLeftFoot == true)
     {
-        leftFoot.stepForward(howFast);
-        rightFoot.stepForward(howFast);
+        leftFoot.stepForward();
+        rightFoot.stepForward();
     }
     else
     {
-        rightFoot.stepForward(howFast);
-        leftFoot.stepForward(howFast);
+        rightFoot.stepForward();
+        leftFoot.stepForward();
     }
-    distanceTraveled += leftFoot.stepSize + rightFoot.stepSize;
+    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize();
     
 }
 
