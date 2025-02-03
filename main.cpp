@@ -108,9 +108,44 @@ struct CarWash
     You'll need to insert the Person struct from the video in the space below.
  */
 
+struct Foot
+{
+    int stepSize() { return 5; }
+    void stepForward()
+    {
+        std::cout << "stepping forward!" << std::endl;
+    }
+};
 
+struct Person
+{    
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
+    Foot leftFoot;
+    Foot rightFoot;
 
-
+    void run(int howFast, bool startWithLeftFoot);
+};
+    
+void Person::run(int howFast, bool startWithLeftFoot)
+{
+    if(startWithLeftFoot == true)
+    {
+        leftFoot.stepForward();
+        rightFoot.stepForward();
+    }
+    else
+    {
+        rightFoot.stepForward();
+        leftFoot.stepForward();
+    }
+    distanceTraveled += leftFoot.stepSize() + rightFoot.stepSize() * howFast;
+    
+}
 
  /*
  2) provide implementations for the member functions you declared in your 10 user-defined types from the previous video outside of your UDT definitions.
@@ -131,264 +166,374 @@ struct CarWash
  This usually means you have to use identical types for all variables used in an expression that is producing that conversion warning.
  */
 
-
 struct CoffeeShop
 {
-    //number of coffee machines
     int numberOfCoffeeMachines = 3;
-    //number of employees
     int numberOfEmployees = 10;
-    //amount of milk used per week
     float amountOfMilkUsedPerWeek = 750.0f;    
-    //amount of profit made per week
     double amountOfProfitMadePerWeek = 10000.00;
-    //number of cups sold per day
     int numberOfCupsSoldPerDay = 100;
-    //3 things it can do:
-    //make coffee
-    void makeCoffee(int numberofCups);
-    //charge customer
-    void chargeCustomer(double amount);
-    //make desserts
-    void makeDesserts(int numberofDesserts);
+
+    void makeCoffee(int numberOfCups);
+    void computeAmountToChargeCustomer(double amount, double discount, int loyaltyPoints);
+    void makeDesserts(int numberOfDesserts);
 };
+
+void CoffeeShop::computeAmountToChargeCustomer(double amount, double discount, int loyaltyPoints) 
+{
+    double discountAmount = amount * (discount / 100);
+    double loyaltyDiscount = loyaltyPoints * 0.5;
+    double finalAmount = amount - discountAmount - loyaltyDiscount;
+
+    std::cout << "The final amount to charge the customer is: " << finalAmount << std::endl;
+}
 
 struct GroceryStore
 {
-    //5 properties:
-    //number of employees
-    int numberOfEmployees = 5;
-    //number of payment stations
+    int numEmployees = 5;
+    int hoursAWeek = 40;
     int numberOfPaymentStations = 3;
-    //amount of fresh food sold per week
     float amountOfFreshFoodSoldPerWeek = 100.0f;
-    //amount of processed food sold per week
     float amountOfProcessedFoodSoldPerWeek = 50.0f;
-    //number of transactions a day
     int numberOfTransactionsADay = 10;
-    //3 things it can do:
-    //stock shelves
-    void stockShelves(int numberofItems);
-    //charge customer
-    void chargeCustomer(double amount);
-    //sell food
-    void sellFood(int numberofItems);
+
+    void StockShelves(int numberofItems);
+    void computeTotalCustomerBill(double amount, double discount, double taxRate);
+    void yearlyTotalPayroll(int salary);
 };
+
+void GroceryStore::computeTotalCustomerBill(double amount, double discount, double taxRate) 
+{
+    double discountedAmount = amount - (amount * discount);
+    double finalAmount = discountedAmount + (discountedAmount * taxRate);
+
+    std::cout << "The final amount to charge the customer is: " << finalAmount << std::endl;
+}
 
 struct ConcertHall
 {
-    //5 properties:
-    //number of seats
     int numberOfSeats = 200;
-    //number of bathrooms
     int numberOfBathrooms = 5;
-    //amount of rent
-    double amountOfRent = 5000.00;
-    //amount of profit made per week
+    double amountOfMonthlyRent = 5000.00;
     double amountOfProfitMadePerWeek = 10000.00;
-    //number of concerts a week
+    double costOfTicket = 50.00;
+    double monthlyExpenses = 2000.00;
     int numberOfConcertsAWeek = 10;
-    //3 things it can do:
-    //sell tickets
+
     void sellTickets(int numberOfTickets);
-    //book artists
     void bookArtists(int numberofArtists);
-    //sell food
-    void sellFood(int numberofItems);
+    void computeProfitMadePerMonth(int totalNumTicketsSold);
 };
 
-struct FederalGovernment
+void ConcertHall::computeProfitMadePerMonth(int totalNumTicketsSold)
 {
-    //5 properties:
-    //number of agencies
+    double totalDollarsTicketsSold = totalNumTicketsSold * costOfTicket;
+    double profitPerMonth = totalDollarsTicketsSold - amountOfMonthlyRent - monthlyExpenses;
+
+    std::cout << "The profit made per month is: " << profitPerMonth << std::endl;
+}
+
+struct LocalGovernment
+{
     int numberOfAgencies = 100;
-    //number of employees
     int numberOfEmployees = 1000;
-    //amount of budget
     double amountOfBudget = 50000.00;
-    //number of policies
     int numberOfPolicies = 50;
-    //number of laws passed
     int numberOfLawsPassed = 200;
-    //3 things it can do:
-    //create policies
+
     void createPolicies(int numberofPoliciesCreated);
-    //pass laws
     void passLaws(int numberofLawsPassed);
-    //collect taxes
-    void collectTaxes(double taxAmount);
+    void collectTaxes(double taxAmount, double taxRate, int numberOfResidents);
 };
+
+void LocalGovernment::collectTaxes(double taxAmount, double taxRate, int numberOfResidents)
+{
+    double collectedTaxes = taxAmount * taxRate * numberOfResidents;
+    amountOfBudget += collectedTaxes;
+}
 
 struct LightingSystem
 {
-    //5 properties:
-    //Number of lights
     int numberOfLights = 100;
-    //Maximum brightness
     int maximumBrightness = 1000;
-    //Color temperature
     float colorTemperature = 5000.0f;
-    //Power consumption
     float powerConsumption = 500.0f;
-    //Brand name
     std::string brandName = "Philips";
-    //3 things it can do:
-    //Turn lights on/off
-    void turnLightsOn(int numberofLightsToTurnOn);
-    //Dim lights
-    void dimLights(int brightnessLevel);
-    //Change light color
-    void changeLightColor(std::string newColor);
+
+    void configureLightingSystem(int numberOfLightsToConfigure, int brightnessLevel, float       newColorTemperature, float newPowerConsumption);
 };
+
+void LightingSystem::configureLightingSystem(int numberOfLightsToConfigure, int brightnessLevel, float newColorTemperature, float newPowerConsumption)
+{
+    if (numberOfLightsToConfigure <= 0)
+    {
+        std::cout << "Invalid number of lights. Please choose a positive number of lights." << std::endl; 
+    } 
+    const int maxLights = 1000;
+    if (numberOfLightsToConfigure > maxLights)
+    {
+        std::cout << "The number of lights exceeds the maximum allowable limit of " << maxLights << " lights." << std::endl;
+    }
+    if (brightnessLevel < 0 || brightnessLevel > maximumBrightness)
+    {
+        std::cout << "Invalid brightness level. Please choose a value between 0 and " << maximumBrightness << "." << std::endl;
+    }
+    numberOfLights = numberOfLightsToConfigure;
+    maximumBrightness = brightnessLevel;
+    colorTemperature = newColorTemperature;
+    powerConsumption = newPowerConsumption;
+}
 
 struct SecuritySystem
 {
-    //5 properties:
-    //Number of cameras
     int numberOfCameras = 10;
-    //Numer of motion sensors
     int numberOfMotionSensors = 5;
-    //Alarm volume (dB)
     int alarmVolume = 100;
-    //Battery backup duration
     int batteryBackupDuration = 24;
-    //Monitoring service name
     std::string monitoringServiceName = "Security Monitoring System";
 
-    //nested UDT:
     struct Camera
     {
-        //5 properties:
         bool hasNightVision = true;
         float zoom = 1.0f;
         int year = 2020;
         std::string brand = "Canon";
         std::string model = "EOS 5D Mark IV";
 
-        //3 things it can do:
         void takePhoto(int numberofPhotos);
         void recordVideo(int durationInMinutes);
         void adjustExposure(int exposureLevel);
     };
 
-    //3 things it can do:
-    //Detect motion
     void detectMotion(Camera camera);
-    //Trigger alarm
     void triggerAlarm(int alarmVolumeLevel);
-    //Record video
     void recordVideo(Camera camera);
-    //member variable whose type is a UDT
+
     Camera primaryCamera;
 };
 
+void SecuritySystem::Camera::takePhoto(int numberOfPhotos) 
+{
+    std::cout << "Taking " << numberOfPhotos << " photos." << std::endl;
+}
+
+void SecuritySystem::Camera::recordVideo(int durationInMinutes) 
+{
+    std::cout << "Recording video for " << durationInMinutes << " minutes." << std::endl;
+}
+
+void SecuritySystem::Camera::adjustExposure(int exposureLevel) 
+{
+    std::cout << "Adjusting exposure to level " << exposureLevel << "." << std::endl;
+}
+
+void SecuritySystem::detectMotion(Camera camera) 
+{
+    std::cout << "Detecting motion using camera: " << camera.brand << std::endl;
+}
+
+void SecuritySystem::triggerAlarm(int alarmVolumeLevel) 
+{
+    std::cout << "Triggering alarm with volume: " << alarmVolumeLevel << std::endl;
+}
+
+void SecuritySystem::recordVideo(Camera camera) 
+{
+    std::cout << "Recording video with camera: " << camera.brand << std::endl;
+}
+
 struct ClimateControl
 {
-    //5 properties:
-    //Current temperature
     float currentTemperature = 25.0f;
-    //Target temperature
     float targetTemperature = 30.0f;
-    //Humidity level
     float humidityLevel = 50.0f;
-    //Fan speed levels
     int fanSpeedLevels = 3;
-    //Manufacturer
     std::string manufacturer = "Philips";
-    //3 things it can do:
-    //Adjust temperature
+
     void adjustTemperature(float newTargetTemperature);
-    //Control fan speed
     void controlFanSpeed(int newFanSpeedLevel);
-    //Monitor air quality
     void monitorAirQuality(int monitoringDuration);
+
+    void adjustClimateControl(float newTargetTemperature, int newFanSpeedLevel, int monitoringDuration);
 };
+
+void ClimateControl::adjustTemperature(float newTargetTemperature) 
+{
+    std::cout << "Adjusting temperature to " << newTargetTemperature << " degrees." << std::endl;
+}
+
+void ClimateControl::controlFanSpeed(int newFanSpeedLevel) 
+{
+    std::cout << "Setting fan speed to level " << newFanSpeedLevel << "." << std::endl;
+}
+
+void ClimateControl::monitorAirQuality(int monitoringDuration) 
+{
+    std::cout << "Monitoring air quality for " << monitoringDuration << " minutes." << std::endl;
+}
+
+void ClimateControl::adjustClimateControl(float newTargetTemperature, int newFanSpeedLevel, int monitoringDuration) 
+{
+    adjustTemperature(newTargetTemperature);
+    controlFanSpeed(newFanSpeedLevel);      
+    monitorAirQuality(monitoringDuration);  
+}
 
 struct EntertainmentSystem
 {
-    //5 properties:
-    //Number of speakers
     int numberOfSpeakers = 5;
-    //Display resolution
     int displayResolution = 1920;
-    //Supported streaming services
     std::string supportedStreamingServices = "Netflix, Hulu, Prime Video";
-    //Power output
     float powerOutput = 500.0f;
-    //Brand name
     std::string brandName = "Sony";
 
-    //nested UDT:
     struct Speaker
     {
-        //5 properties:
         bool hasSubwoofer = true;
         float volume = 1.0f;
         int year = 2020;
         std::string brand = "Sony";
         std::string model = "WH-1000XM4";
 
-
-        //3 things it can do:
         void adjustVolume(float newVolumeLevel);
         void changeAudioSettings(std::string newAudioSetting);
         void adjustAudioLevels(int newAudioLevel);
     };
 
-    //3 things it can do:
-    //Play movies
     void playMovies(int numberOfMovies);
-    //Stream music
     void streamMusic(Speaker speaker);
-    //Adjust audio levels
     void adjustAudioLevels(Speaker speaker);
-    //Member variable whose type is a UDT
+
+    void adjustEntertainmentSystemSettings(int newNumberOfSpeakers, int newDisplayResolution, float newVolumeLevel, std::string newAudioSetting, int newAudioLevel);
+
     Speaker primarySpeaker;
 };
 
+void EntertainmentSystem::Speaker::adjustVolume(float newVolumeLevel) 
+{
+    std::cout << "Adjusting volume to " << newVolumeLevel << "." << std::endl;
+}
+
+void EntertainmentSystem::Speaker::changeAudioSettings(std::string newAudioSetting) 
+{
+    std::cout << "Changing audio settings to " << newAudioSetting << "." << std::endl;
+}
+
+void EntertainmentSystem::Speaker::adjustAudioLevels(int newAudioLevel) 
+{
+    std::cout << "Adjusting audio level to " << newAudioLevel << "." << std::endl;
+}
+
+void EntertainmentSystem::playMovies(int numberOfMovies) 
+{
+    std::cout << "Playing " << numberOfMovies << " movies." << std::endl;
+}
+
+void EntertainmentSystem::streamMusic(Speaker speaker) 
+{
+    std::cout << "Streaming music using speaker: " << speaker.brand << std::endl;
+}
+
+void EntertainmentSystem::adjustAudioLevels(Speaker speaker) 
+{
+    std::cout << "Adjusting audio levels for speaker: " << speaker.brand << std::endl;
+}
+
+void EntertainmentSystem::adjustEntertainmentSystemSettings(int newNumberOfSpeakers, int newDisplayResolution, float newVolumeLevel, std::string newAudioSetting, int newAudioLevel)
+{
+    numberOfSpeakers = newNumberOfSpeakers;
+    displayResolution = newDisplayResolution;
+
+    primarySpeaker.adjustVolume(newVolumeLevel);
+    primarySpeaker.changeAudioSettings(newAudioSetting);
+    primarySpeaker.adjustAudioLevels(newAudioLevel);
+
+    std::cout << "Entertainment system updated: " << std::endl;
+    std::cout << "Number of Speakers: " << numberOfSpeakers << std::endl;
+    std::cout << "Display Resolution: " << displayResolution << std::endl;
+}
+
 struct SmartAssistant
 {
-    //5 properties:
-    //Wake word
     std::string wakeWord = "Alexa";
-    //Supported languages
     std::string supportedLanguages = "English, Spanish, French";
-    //Number of microphones 
     int numberOfMicrophones = 3;
-    //Speaker power
     float speakerPower = 500.0f;
-    //Connection type
     std::string connectionType = "Bluetooth";
-    //3 things it can do:
-    //Answer questions
+
     void answerQuestions(int numberOfQuestions);
-    //Control smart devices
     void controlSmartDevices(int numberOfDevices);
-    //Set reminders
     void setReminders(int numberOfReminders);
+
+    void adjustSmartAssistantSettings(std::string newWakeWord, std::string newSupportedLanguages, int newNumberOfMicrophones, float newSpeakerPower, std::string newConnectionType);
 };
+
+void SmartAssistant::answerQuestions(int numberOfQuestions) 
+{
+    std::cout << "Answering " << numberOfQuestions << " questions." << std::endl;
+}
+
+void SmartAssistant::controlSmartDevices(int numberOfDevices) 
+{
+    std::cout << "Controlling " << numberOfDevices << " devices." << std::endl;
+}
+
+void SmartAssistant::setReminders(int numberOfReminders) 
+{
+    std::cout << "Setting " << numberOfReminders << " reminders." << std::endl;
+}
+
+void SmartAssistant::adjustSmartAssistantSettings(std::string newWakeWord, std::string newSupportedLanguages, int newNumberOfMicrophones, float newSpeakerPower, std::string newConnectionType)
+{
+    wakeWord = newWakeWord;
+    supportedLanguages = newSupportedLanguages;
+    numberOfMicrophones = newNumberOfMicrophones;
+    speakerPower = newSpeakerPower;
+    connectionType = newConnectionType;
+
+    std::cout << "Smart Assistant settings updated: " << std::endl;
+    std::cout << "Wake Word: " << wakeWord << std::endl;
+    std::cout << "Supported Languages: " << supportedLanguages << std::endl;
+    std::cout << "Number of Microphones: " << numberOfMicrophones << std::endl;
+    std::cout << "Speaker Power: " << speakerPower << " Watts" << std::endl;
+    std::cout << "Connection Type: " << connectionType << std::endl;
+}
 
 struct SmartHome
 {
-    //5 properties:
-    //Lighting system
+
     LightingSystem lightingSystem;
-    //Security system
     SecuritySystem securitySystem;
-    //Climate control
     ClimateControl climateControl;
-    //Entertainment system
     EntertainmentSystem entertainmentSystem;
-    //Smart assistant
     SmartAssistant smartAssistant;
-    //3 things it can do:
-    //automate routines
+
+    void controlLightingSystem(int brightnessLevel, float newColorTemperature, float newPowerConsumption);
     void automateRoutines(int numberOfRoutines);
-    //monitor home security
     void monitorHomeSecurity(int monitoringDuration);
-    // adjust home settings remotely
     void adjustHomeSettingsRemotely(int numberOfSettings);
 };
+
+void SmartHome::controlLightingSystem(int brightnessLevel, float newColorTemperature, float newPowerConsumption)
+{
+    std::cout << "Adjusting lighting system: "
+    << "Brightness: " << brightnessLevel << "%, "
+    << "Color Temperature: " << newColorTemperature << "K, "
+    << "Power Consumption: " << newPowerConsumption << "W." << std::endl;
+}
+void SmartHome::automateRoutines(int numberOfRoutines) 
+{
+    std::cout << "Automating " << numberOfRoutines << " routines." << std::endl;
+}
+
+void SmartHome::monitorHomeSecurity(int monitoringDuration) 
+{
+    std::cout << "Monitoring home security for " << monitoringDuration << " minutes." << std::endl;
+}
+void SmartHome::adjustHomeSettingsRemotely(int numberOfSettings)
+{
+    std::cout << "Adjusting " << numberOfSettings << " home settings remotely." << std::endl;
+}
 
 int main()
 {
