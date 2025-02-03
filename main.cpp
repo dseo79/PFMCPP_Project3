@@ -117,19 +117,19 @@ struct Foot
     }
 };
 
-    struct Person
-    {    
-        int age;
-        int height;
-        float hairLength;
-        float GPA;
-        unsigned int SATScore;
-        int distanceTraveled;
-        Foot leftFoot;
-        Foot rightFoot;
-    
-        void run(int howFast, bool startWithLeftFoot);
-    };
+struct Person
+{    
+    int age;
+    int height;
+    float hairLength;
+    float GPA;
+    unsigned int SATScore;
+    int distanceTraveled;
+    Foot leftFoot;
+    Foot rightFoot;
+
+    void run(int howFast, bool startWithLeftFoot);
+};
     
 void Person::run(int howFast, bool startWithLeftFoot)
 {
@@ -246,7 +246,7 @@ struct LocalGovernment
     void collectTaxes(double taxAmount, double taxRate, int numberOfResidents);
 };
 
-    void LocalGovernment::collectTaxes(double taxAmount, double taxRate, int numberOfResidents)
+void LocalGovernment::collectTaxes(double taxAmount, double taxRate, int numberOfResidents)
 {
     double collectedTaxes = taxAmount * taxRate * numberOfResidents;
     amountOfBudget += collectedTaxes;
@@ -263,7 +263,7 @@ struct LightingSystem
     void configureLightingSystem(int numberOfLightsToConfigure, int brightnessLevel, float       newColorTemperature, float newPowerConsumption);
 };
 
-    void LightingSystem::configureLightingSystem(int numberOfLightsToConfigure, int brightnessLevel, float newColorTemperature, float newPowerConsumption)
+void LightingSystem::configureLightingSystem(int numberOfLightsToConfigure, int brightnessLevel, float newColorTemperature, float newPowerConsumption)
 {
     if (numberOfLightsToConfigure <= 0)
     {
@@ -277,7 +277,7 @@ struct LightingSystem
     if (brightnessLevel < 0 || brightnessLevel > maximumBrightness)
     {
         std::cout << "Invalid brightness level. Please choose a value between 0 and " << maximumBrightness << "." << std::endl;
-}
+    }
     numberOfLights = numberOfLightsToConfigure;
     maximumBrightness = brightnessLevel;
     colorTemperature = newColorTemperature;
@@ -521,16 +521,16 @@ void SmartHome::controlLightingSystem(int brightnessLevel, float newColorTempera
     << "Color Temperature: " << newColorTemperature << "K, "
     << "Power Consumption: " << newPowerConsumption << "W." << std::endl;
 }
-    void SmartHome::automateRoutines(int numberOfRoutines) 
+void SmartHome::automateRoutines(int numberOfRoutines) 
 {
     std::cout << "Automating " << numberOfRoutines << " routines." << std::endl;
 }
 
-    void SmartHome::monitorHomeSecurity(int monitoringDuration) 
+void SmartHome::monitorHomeSecurity(int monitoringDuration) 
 {
     std::cout << "Monitoring home security for " << monitoringDuration << " minutes." << std::endl;
 }
-    void SmartHome::adjustHomeSettingsRemotely(int numberOfSettings)
+void SmartHome::adjustHomeSettingsRemotely(int numberOfSettings)
 {
     std::cout << "Adjusting " << numberOfSettings << " home settings remotely." << std::endl;
 }
